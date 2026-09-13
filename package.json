@@ -1,0 +1,20 @@
+{
+  "name": "proof-guardrails",
+  "version": "0.1.0",
+  "description": "Fail-closed guardrails for Groth16 verification and Poseidon Merkle roots: pinned keys, named public signals bound to the authorized context, and a dependency-free incremental tree.",
+  "license": "Apache-2.0",
+  "type": "module",
+  "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./field": "./src/field.js",
+    "./signals": "./src/signals.js",
+    "./groth16": "./src/groth16.js",
+    "./merkle": "./src/merkle.js",
+    "./poseidon": "./src/poseidon.js"
+  },
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node --test" },
+  "keywords": ["zero-knowledge", "groth16", "poseidon", "merkle", "bn254", "security"],
+  "files": ["index.js", "src", "README.md", "SECURITY.md", "LICENSE"]
+}

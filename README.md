@@ -24,14 +24,17 @@ returns something truthy but not `true`, a tampered frontier.
 
 ## Install
 
+Not on npm yet. Clone it, or vendor `src/` — it is five files and no dependencies.
+
 ```sh
-npm install proof-guardrails     # or copy src/ — it is five files and no dependencies
+git clone https://github.com/kunli7463-ctrl/proof-guardrails.git
+cd proof-guardrails && node --test
 ```
 
 ## Bind a proof to its context
 
 ```js
-import { Groth16Guardrail, PublicSignalSchema, verificationKeyHash } from "proof-guardrails";
+import { Groth16Guardrail, PublicSignalSchema, verificationKeyHash } from "./proof-guardrails/index.js";
 import * as snarkjs from "snarkjs";
 
 const schema = new PublicSignalSchema(["merkleRoot", "recipient", "fee"]);
@@ -62,7 +65,7 @@ can tell later exactly what was verified.
 ## Keep an append-only Merkle root honest
 
 ```js
-import { createMerkleFrontier } from "proof-guardrails";
+import { createMerkleFrontier } from "./proof-guardrails/index.js";
 
 const merkle = createMerkleFrontier({
   leafDomain: 0x4c454146n,   // match your circuit's domain tags
